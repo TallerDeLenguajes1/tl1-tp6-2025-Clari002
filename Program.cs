@@ -222,7 +222,32 @@ if (ecuacion.Contains("*"))
 }
 if (ecuacion.Contains("/"))
 {
-    string [] numeros = ecuacion.Split('/');
-    double resultado = double.Parse(numeros[0])/double.Parse(numeros[1]);
-    Console.WriteLine(ecuacion+"="+ resultado);
+    string[] numeros = ecuacion.Split('/');
+    double resultado = double.Parse(numeros[0]) / double.Parse(numeros[1]);
+    Console.WriteLine(ecuacion + "=" + resultado);
+}
+
+//punto 5
+Console.WriteLine("Ingrese una direccion: ");
+string direccionTexto = Console.ReadLine();
+string inicioDireccion = "https://www.";
+string finDireccion1 = ".com";
+string finDireccion2 = ".ar";
+if (direccionTexto.StartsWith(inicioDireccion) && (direccionTexto.EndsWith(finDireccion1)||direccionTexto.EndsWith(finDireccion2)))
+{
+    Console.WriteLine("La direccion proporcionada es valida");
+}else{
+    Console.WriteLine("La direccion proporcionada no es valida");
+}
+
+Console.WriteLine("Ingrese un mail");
+string emailTexto = Console.ReadLine();
+if (emailTexto.Contains("@"))
+{
+    if (emailTexto.EndsWith(".com")||emailTexto.EndsWith(".net"))
+    {
+        Console.WriteLine("Email valido");
+    }
+}else{
+    Console.WriteLine("Email no valido");
 }
