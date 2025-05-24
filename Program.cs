@@ -149,3 +149,80 @@ else
         Console.WriteLine("Minimo entre " + numero1 + " y " + numero2 + ": " + Math.Min(numero1, numero2));
     }
 }
+
+//Ejercicio 4
+Console.WriteLine("--------Trabajando con String-------------");
+Console.WriteLine("Ingresar un texto: ");
+string texto = Console.ReadLine();
+
+int longitud = texto.Length;
+Console.WriteLine("La longitud de la cadena de texto es: " + longitud);
+
+Console.WriteLine("Ingresar otro texto");
+string texto2 = Console.ReadLine();
+string textoConcatenado = texto + texto2;
+Console.WriteLine("Cadenas concatenadas: " + textoConcatenado);
+
+Console.WriteLine("Ingresar el indice de inicio para la subcadena (primer texto): ");
+int indiceInicio = int.Parse(Console.ReadLine());
+Console.WriteLine("Ingresar la longitud de la subcadena:");
+int longitudSubcadena = int.Parse(Console.ReadLine());
+string subcadena = texto.Substring(indiceInicio, longitudSubcadena);
+Console.WriteLine("La subcadena extraída es: " + subcadena);
+
+Console.WriteLine("Recorrer la cadena con foreach");
+foreach (char caracter in texto)
+{
+    Console.WriteLine(caracter);
+}
+Console.WriteLine("Ingresar la palabra a buscar en la cadena:");
+string palabraBuscada = Console.ReadLine();
+if (texto.Contains(palabraBuscada))
+{
+    Console.WriteLine("La palabra "+palabraBuscada+" se encuentra en el texto");
+}else{
+    Console.WriteLine("No se encuentra la palabra "+palabraBuscada+" en el texto");
+
+}
+
+string textoMay = texto.ToUpper();
+string textoMin = texto.ToLower();
+Console.WriteLine("El texto en mayusculas: "+ textoMay);
+Console.WriteLine("El texto en minusculas: "+ textoMin);
+
+
+Console.WriteLine("Ingrese una cadena separada por caracteres:");
+string cadenaSeparada = Console.ReadLine();
+string[] partes = cadenaSeparada.Split(',');
+Console.WriteLine("Resultados:");
+foreach (string parte in partes)
+{
+Console.WriteLine(parte);
+}
+
+Console.WriteLine("Ingresar una ecuacion que incluya(+,-,*,/) por ejemplo: 582+2 o 4/2 ");
+string ecuacion = Console.ReadLine();
+if (ecuacion.Contains("+"))
+{
+    string [] numeros = ecuacion.Split('+');
+    double resultado = double.Parse(numeros[0])+double.Parse(numeros[1]);
+    Console.WriteLine(ecuacion + "=" + resultado);
+}
+if (ecuacion.Contains("-"))
+{
+    string [] numeros = ecuacion.Split('-');
+    double resultado = double.Parse(numeros[0])-double.Parse(numeros[1]);
+    Console.WriteLine(ecuacion+"="+ resultado);
+}
+if (ecuacion.Contains("*"))
+{
+    string [] numeros = ecuacion.Split('*');
+    double resultado = double.Parse(numeros[0])*double.Parse(numeros[1]);
+    Console.WriteLine(ecuacion + "=" + resultado);
+}
+if (ecuacion.Contains("/"))
+{
+    string [] numeros = ecuacion.Split('/');
+    double resultado = double.Parse(numeros[0])/double.Parse(numeros[1]);
+    Console.WriteLine(ecuacion+"="+ resultado);
+}
