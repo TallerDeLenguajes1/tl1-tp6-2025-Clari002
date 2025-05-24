@@ -101,3 +101,51 @@ else
         } while (valor != 0);
     }
 }
+
+
+//Ejercicio 3
+Console.WriteLine("-----------CALCULADORA AVANZADA--------------");
+Console.WriteLine("Ingrese un numero para realizar operaciones: ");
+if (!double.TryParse(Console.ReadLine(), out double numero))
+{
+    Console.WriteLine("El valor que ha ingresado no es un numero valido");
+    return;
+}
+
+Console.WriteLine("Valor absoluto de " + numero + " es: " + Math.Abs(numero));
+Console.WriteLine("Cuadrado de " + numero + ": " + Math.Pow(numero, 2));
+if (numero >= 0)
+{
+    Console.WriteLine("Raiz cuadrada de " + numero + ": " + Math.Sqrt(numero));
+}
+else
+{
+    Console.WriteLine("La raiz cuadrada no esta definida para numeros negativos");
+}
+
+double radianes = numero * (Math.PI / 180);
+Console.WriteLine("Seno de " + numero + " en grados: " + Math.Sin(radianes));
+Console.WriteLine("Coseno de " + numero + " en grados: " + Math.Cos(radianes));
+Console.WriteLine("Parte entera de " + numero + ": " + Math.Truncate(numero));
+
+Console.WriteLine("\n-----------COMPARACION DE DOS NUMEROS-----------");
+Console.WriteLine("Ingrese el primer numero: ");
+if (!double.TryParse(Console.ReadLine(), out double numero1))
+{
+    Console.WriteLine("El valor que ha ingresado no es un numero valido");
+    return;
+}
+else
+{
+    Console.WriteLine("Ingrese el segundo numero: ");
+    if (!double.TryParse(Console.ReadLine(), out double numero2))
+    {
+        Console.WriteLine("El valor que ha ingresado no es un numero valido");
+        return;
+    }
+    else
+    {
+        Console.WriteLine("Maximo entre " + numero1 + " y " + numero2 + ": " + Math.Max(numero1, numero2));
+        Console.WriteLine("Minimo entre " + numero1 + " y " + numero2 + ": " + Math.Min(numero1, numero2));
+    }
+}
